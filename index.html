@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <title>Change Background Color</title>
+    <style>
+        /* universal selector */
+        * {
+            font-size: 50px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        /* tag selector */
+        body {
+            background-color: steelblue;
+        }
+    </style>
+    <script>
+        let changeBgColor = () => {
+
+            event.preventDefault();
+
+            let message = document.getElementById("msg");
+
+            let colours = ["antiquewhite", "aqua", "aquamarine", "bisque", "burlywood", "chartreuse", "violet", "teal", "steelblue", "yellowgreen"]
+            let index = parseInt(Math.random() * colours.length);
+            document.body.style.backgroundColor = colours[index];
+            message.innerHTML = "Color changed to  " + colours[index];
+
+        }
+    </script>
+</head>
+
+<body>
+    <center>
+        <h1>Addition of two Number</h1>
+        <form onsubmit="changeBgColor()">
+            <input type="submit" value="Change Colour">
+        </form>
+        <h1 id="msg"></h1>
+    </center>
+</body>
+
+</html>
